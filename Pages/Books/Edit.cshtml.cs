@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Ciocan_Felicia_Lab2.Data;
 using Ciocan_Felicia_Lab2.Models;
 
+
 namespace Ciocan_Felicia_Lab2.Pages.Books
 {
     public class EditModel : PageModel
@@ -37,7 +38,7 @@ namespace Ciocan_Felicia_Lab2.Pages.Books
             }
             Book = book;
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(),"ID", "PublisherName");
-            ViewData["AuthorsID"] = new SelectList(_context.Set<Ciocan_Felicia_Lab2.Models.Authors>(), "ID", "Authors");
+            ViewData["AuthorsID"] = new SelectList(_context.Set<Ciocan_Felicia_Lab2.Models.Authors>(), "ID", "LastName");
 
             return Page();
         }
