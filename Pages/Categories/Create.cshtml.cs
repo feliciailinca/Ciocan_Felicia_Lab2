@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Ciocan_Felicia_Lab2.Data;
 using Ciocan_Felicia_Lab2.Models;
 
-namespace Ciocan_Felicia_Lab2.Pages.Authors
+namespace Ciocan_Felicia_Lab2.Pages.Categories
 {
     public class CreateModel : PageModel
     {
@@ -21,12 +21,11 @@ namespace Ciocan_Felicia_Lab2.Pages.Authors
 
         public IActionResult OnGet()
         {
-            ViewData["AuthorsID"] = new SelectList(_context.Set<Ciocan_Felicia_Lab2.Models.Authors>(), "ID", "FullName");
             return Page();
         }
 
         [BindProperty]
-        public Ciocan_Felicia_Lab2.Models.Authors Authors { get; set; } = default!;
+        public Category Category { get; set; } = default!;
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -36,7 +35,7 @@ namespace Ciocan_Felicia_Lab2.Pages.Authors
                 return Page();
             }
 
-            _context.Authors.Add(Authors);
+            _context.Category.Add(Category);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
