@@ -81,7 +81,7 @@ namespace Ciocan_Felicia_Lab2.Pages.Books
             //se va modifica AuthorID conform cu sarcina de la lab 2
 
             if (await TryUpdateModelAsync<Book>(bookToUpdate, "Book",
-                   i => i.Title, i => i.Authors,
+                   i => i.Title, i => i.AuthorsID,
                    i => i.Price, i => i.PublishingDate, i => i.PublisherID))
             {
                 UpdateBookCategories(_context, selectedCategories, bookToUpdate);

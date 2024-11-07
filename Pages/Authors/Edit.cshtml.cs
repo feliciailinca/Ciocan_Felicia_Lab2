@@ -68,6 +68,8 @@ namespace Ciocan_Felicia_Lab2.Pages.Authors
             ViewData["AuthorsID"] = new SelectList(_context.Set<Ciocan_Felicia_Lab2.Models.Authors>(), "ID", "FullName");
 
             return RedirectToPage("./Index");
+
+
         }
 
         private bool AuthorsExists(int id)
