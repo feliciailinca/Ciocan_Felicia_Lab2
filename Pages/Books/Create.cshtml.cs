@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Ciocan_Felicia_Lab2.Data;
 using Ciocan_Felicia_Lab2.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ciocan_Felicia_Lab2.Pages.Books
 {
+    [Authorize(Roles = "Admin")]
     public class CreateModel : BookCategoriesPageModel
     {
         private readonly Ciocan_Felicia_Lab2.Data.Ciocan_Felicia_Lab2Context _context;
